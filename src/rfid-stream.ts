@@ -35,14 +35,17 @@ class RFIDStream extends Stream {
         if (!opts) {
             throw new Error("Options must be filled")
         }
-        if (!opts.vendorId || typeof opts.vendorId !== "number") {
-            throw new Error("Vendor id must be filled")
-        }
-        if (!opts.productId || typeof opts.productId !== "number") {
-            throw new Error("Product id must be filled")
-        }
-        if ((!opts.vendorId && !opts.productId) && typeof opts.path !== "string") {
-            throw new Error("Path must be filled with string")
+        if (!opts.vendorId || !opts.productId) {
+            if (!opts.path) {
+                throw new Error("Path must be filled with string")
+            }
+        } else {
+            if (typeof opts.vendorId !== "number") {
+                throw new Error("Vendor id must be filled with number")
+            }
+            if (typeof opts.productId !== "number") {
+                throw new Error("Product id must be filled with number")
+            }
         }
     }
 
