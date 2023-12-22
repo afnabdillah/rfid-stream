@@ -1,7 +1,7 @@
 {
   "name": "rfid-stream",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple package to outputs RFID from a keyboard-like card scanner devices, inspired from node-hid-stream and node-hid",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
