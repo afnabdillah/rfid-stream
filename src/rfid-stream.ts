@@ -2,7 +2,7 @@ import { RFIDMapper } from "./rfid-mapper";
 import { Stream } from "stream";
 import HID from "node-hid";
 
-type HIDOpts = {
+export type HIDOpts = {
     vendorId: number
     productId: number
     path?: string
